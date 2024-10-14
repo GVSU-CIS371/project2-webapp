@@ -10,8 +10,21 @@ function generateProductHTML(product: Product): string {
 }
 
 function renderProducts(prods: Product[]): void {
-    // your code
+
+    const container = document.getElementById("main-container");
+
+    if (container) {
+        container.innerHTML = "";
+
+        prods.forEach((product) => {
+            const productHTML = generateProductHTML(product);
+            container.innerHTML += productHTML;
+        });
+    } else {
+        console.error("Container element not found!");
+    }
 }
+    
 
 function getByCategory(category: string): void {
     // your code
