@@ -26,9 +26,10 @@ header {
   background-image: linear-gradient(90deg, #1f4e5f, #274156);
 }
 
-h1 {
+h1 a {
   font-family: "DM Sans", sans-serif;
   color: #ebebeb;
+  text-decoration: none;
   text-transform: uppercase;
 }
 

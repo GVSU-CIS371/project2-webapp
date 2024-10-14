@@ -13,7 +13,7 @@
 
   <div id="app">
     <header>
-      <h1>My Store</h1>
+      <h1><a href="#" id="store-link">My Store</a></h1> 
       <nav>
         <ul>
           <li><a href="#" id="electronics">Electronics</a></li>
@@ -31,13 +31,36 @@
 
         // Bind click events using .addEventListener to the navigation links. Upon clicking:
 
+        // - "My Store" This displays all products in the store
+        document.getElementById("store-link").addEventListener("click", (e) => {
+        e.preventDefault();
+        renderProducts(products);
+        })
+ 
         // - "Electronics" should display all products categorized as "Electronics."
-        // - "Clothing" should display all products categorized as "Clothing."
-        // - "Groceries" should display all products categorized as "Groceries."
-        // - "Best Seller" should display all products with a rating greater than 4.5.
+        document.getElementById("electronics").addEventListener("click", (e) => {
+        e.preventDefault();
+        getByCategory("Electronics");
+      });
 
-        
-        // your code
+        // - "Clothing" should display all products categorized as "Clothing."
+        document.getElementById("clothing").addEventListener("click", (e) => {
+        e.preventDefault();
+        getByCategory("Clothing");
+      });
+
+        // - "Groceries" should display all products categorized as "Groceries."
+        document.getElementById("groceries").addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent the default anchor link behavior
+        getByCategory("Groceries"); // Display Grocery products
+      });
+
+        // - "Best Seller" should display all products with a rating greater than 4.5.
+        document.getElementById("bestSeller").addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent the default anchor link behavior
+        getByRating(4.5); // Display products with a rating greater than 4.5
+      });
+
       </script>
     </main>
     <footer>

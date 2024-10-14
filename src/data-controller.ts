@@ -25,13 +25,16 @@ function renderProducts(prods: Product[]): void {
     }
 }
     
-
 function getByCategory(category: string): void {
-    // your code
+
+    const filteredProducts = products.filter((product) => product.category === category);
+    renderProducts(filteredProducts);
 }
 
 function getByRating(minRating: number): void {
-    // your code
+    
+    const filteredProducts = products.filter((product) => product.rating > minRating);
+    renderProducts(filteredProducts);
 }
 
 export { renderProducts, getByCategory, getByRating };
